@@ -50,7 +50,7 @@ function addSelectedItemToCart() {
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
 function updateCounter() {
-   let numOfItems= JSON.parse(localStorage.getItem('Items')).length;
+   let numOfItems= JSON.parse(localStorage.getItem('cart')).length;
    const navCounter = document.getElementById('itemCount');              //---------------here
    navCounter.textContent = numOfItems;
 }
@@ -59,10 +59,10 @@ let previewedquant ;
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
   // TODO: Get the item and quantity from the form
-  for(let i =0; i<JSON.parse(localStorage.Items).length;i++){
+  for(let i =0; i<JSON.parse(localStorage.cart).length;i++){
   
-  previewedItems = JSON.parse(localStorage.getItem('Items'))[i].product;
-  previewedquant = JSON.parse(localStorage.getItem('Items'))[i].quantity;
+  previewedItems = JSON.parse(localStorage.getItem('cart'))[i].product;
+  previewedquant = JSON.parse(localStorage.getItem('cart'))[i].quantity;
   }
   // TODO: Add a new element to the cartContents div with that information
   const cartContentsEL =document.getElementById('cartContents');
